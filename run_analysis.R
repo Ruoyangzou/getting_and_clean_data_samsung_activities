@@ -1,7 +1,11 @@
-# download data set name it data.zip
-#download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip', destfile = './data.zip', method='curl')
 # unzip data into samsung folder, overwrite existing data
-#unzip('./data.zip', exdir='./', overwrite=TRUE, unzip='unzip')
+if (file.exists('./data.zip')){
+  unzip('./data.zip', exdir='./', overwrite=TRUE, unzip='unzip')
+}else{
+# download data set name it data.zip
+  download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip', destfile = './data.zip', method='curl')
+  unzip('./data.zip', exdir='./', overwrite=TRUE, unzip='unzip')
+}
 
 # merge training and testing dataset
 # 1. read training data
