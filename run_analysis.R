@@ -52,4 +52,4 @@ clean_data <- cbind(subject_all, y_all, x_all)
 # import dplyr for easier data manipulation
 library('dplyr')
 library('plyr')
-avg_by_act_per_subj <- ddply(clean_data, .(subjects, activities), numcolwise(mean))
+final_tidy <- ddply(clean_data, .(subjects, activities), numcolwise(mean))
